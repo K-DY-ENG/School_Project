@@ -29,8 +29,8 @@ plat_time_start = False
 
 boll_x = (display_width-150)//2 + 10
 boll_y = display_height - 350
-boll_width = 20
-boll_height = 20
+boll_width = 15
+boll_height = 15
 
 
 
@@ -85,7 +85,8 @@ def game_run():
             boll_move_x()
             boll_move_y()
             Level_1.check_obj_brocken(boll_x, boll_y)
-            y1()
+            broken_y()
+            broken_x()
 
             key = pygame.key.get_pressed()
             if key[pygame.K_RIGHT]:
@@ -158,26 +159,26 @@ def boll_move_y():
 def check_boll_x():
     global boll_control_x, boll_control_y, boll, boll_moves_x
 
-    if boll_x+20 >= display_width-150:
+    if boll_x+15 >= display_width-150:
         boll_moves_x = random.choice(boll_step_x)
         boll_control_x = -1
     if boll_x <= 19:
         boll_moves_x = random.choice(boll_step_x)
         boll_control_x = 1
-    if boll_x+20 == platform_x and boll_y+20 == platform_y:
+    if boll_x+15 == platform_x and boll_y+20 == platform_y:
         boll_moves_x = random.choice(boll_step_x)
         boll_control_x = -1
     
-    if boll_x + 20 == platform_x and boll_y + 20 > platform_y:
+    if boll_x + 15 == platform_x and boll_y + 15 > platform_y:
         boll_control_x = -1
-    if boll_x == platform_x + plat_width and boll_y + 20 > platform_y:
+    if boll_x == platform_x + plat_width and boll_y + 15 > platform_y:
         boll_control_x = 1
 
 def check_boll_y():
     global boll_control_y, boll_moves_y
 
-    if boll_x + 20 >= platform_x and boll_x <= platform_x+platform_width:
-        if boll_y + 20 >= platform_y and boll_y < platform_y:
+    if boll_x + 15 >= platform_x and boll_x <= platform_x+platform_width:
+        if boll_y + 15 >= platform_y and boll_y < platform_y:
             boll_moves_y = random.choice(boll_step_y)
             boll_control_y = -1 
 
@@ -210,12 +211,22 @@ def platform_lenght_time():
     if plat_time_start:
         plat_len_time += 1
 
-def y1():
+def broken_y():
     global boll_control_y
     if Level_1.broken == 1:
         boll_control_y = 1
         Level_1.broken = 0
+    if Level_1.broken == -1:
+        boll_control_y = -1
+        Level_1.broken = 0
 
-
+def broken_x():
+    global boll_control_y
+    if Level_1.broken_x == 1:
+        boll_control_x = 1
+        Level_1.broken_x = 0
+    if Level_1.broken_x == -1:
+        boll_control_x = -1
+        Level_1.broken_x = 0
 
 game_run()
