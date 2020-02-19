@@ -36,7 +36,7 @@ boll_height = 15
 
 
 boll_step_x = (1, 2, 3)
-boll_step_y = (2, 3)
+boll_step_y = (1, 2, 3)
 boll_control_x = 0
 boll_control_y = 1
 
@@ -136,7 +136,7 @@ def blit_screen():
             display.blit(Platform_skin, (platform_x, platform_y, platform_width, platform_height))
             Level_1.objects_skin()
             print_text('Developed for a school project by D.K (vk.com/d.e_mon)', 0, 0)
-            print_text('Beta version 1.0', 570, 635)
+            print_text('Beta version 1.1', 570, 635)
 
 
 def right():
@@ -197,7 +197,7 @@ def check_boll_y():
     if boll_y >= display_height:
         pass
     
-    if boll_y <= 80:
+    if boll_y <= 85:
         boll_moves_y = random.choice(boll_step_y)
         boll_control_y = 1
 
@@ -233,7 +233,7 @@ def broken_y():
         Level_1.broken = 0
 
 def broken_x():
-    global boll_control_y
+    global boll_control_x
     if Level_1.broken_x == 1:
         boll_control_x = 1
         Level_1.broken_x = 0

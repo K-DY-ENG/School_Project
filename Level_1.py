@@ -177,7 +177,7 @@ def objects_skin():
 	display.blit(obj_yellow, (obj43_x, obj43_y, OBJ_WIDHT, OBJ_HEIGT))
 	display.blit(obj_green, (obj44_x, obj44_y, OBJ_WIDHT, OBJ_HEIGT))
 	display.blit(obj_white, (obj_main_x, obj_main_y, OBJ_WIDHT, OBJ_HEIGT))
-	print_obj_count(('X' + str(40-obj_count)),596, 92)
+	print_obj_count(('X' + str(44-obj_count)),596, 92)
 
 
 def print_obj_count(messege, x, y, font_color = (WHITE), font_type = 'GameFont.ttf', font_size = 30):
@@ -215,77 +215,77 @@ def check_obj_brocken(boll_x, boll_y):
 #Четвертый ряд
 	if 154>=boll_y>=152:
 		if obj34_brok:
-			if  68 >= boll_x and boll_x+15 >= 28 :
+			if  68>= boll_x and boll_x+15>=28 :
 				obj34_x = 550
 				obj34_y = 100
 				broken = 1
 				obj_count += 1
 				obj34_brok = False
 		if obj35_brok:
-			if 110 >= boll_x and boll_x+15 >= 70 :
+			if 110>= boll_x and boll_x+15>=70 :
 				obj35_x = 550
 				obj35_y = 100
 				broken = 1
 				obj_count += 1
 				obj35_brok = False
 		if obj36_brok:
-			if 152 >= boll_x and boll_x+15 >= 112 :
+			if 152>= boll_x and boll_x+15>=112 :
 				obj36_x = 550
 				obj36_y = 100
 				broken = 1
 				obj_count += 1
 				obj36_brok = False
 		if obj37_brok:
-			if 194 >= boll_x and boll_x+15 >= 154 :
+			if 194>= boll_x and boll_x+15>=154 :
 				obj37_x = 550
 				obj37_y = 100
 				broken = 1
 				obj_count += 1
 				obj37_brok = False
 		if obj38_brok:
-			if 236 >= boll_x and boll_x+15 >= 196 :
+			if 236>= boll_x and boll_x+15>=196 :
 				obj38_x = 550
 				obj38_y = 100
 				broken = 1
 				obj_count += 1
 				obj38_brok = False
 		if obj39_brok:
-			if 278 >= boll_x and boll_x+15 >= 238 :
+			if 278>= boll_x and boll_x+15>=238 :
 				obj39_x = 550
 				obj39_y = 100
 				broken = 1
 				obj_count += 1
 				obj39_brok = False
 		if obj40_brok:
-			if 320 >= boll_x and boll_x+15 >= 280:
+			if 320>= boll_x and boll_x+15>=280:
 				obj40_x = 550
 				obj40_y = 100
 				broken = 1
 				obj_count += 1
 				obj40_brok = False
 		if obj41_brok:
-			if 362 >= boll_x and boll_x+15 >= 322 :
+			if 362>= boll_x and boll_x+15>=322 :
 				obj41_x = 550
 				obj41_y = 100
 				broken = 1
 				obj_count += 1
 				obj41_brok = False
 		if obj42_brok:
-			if 404 >= boll_x and boll_x+15 >= 364 :
+			if 404>= boll_x and boll_x+15>=364 :
 				obj42_x = 550
 				obj42_y = 100
 				broken = 1
 				obj_count += 1
 				obj42_brok = False
 		if obj43_brok:
-			if 446 >= boll_x and boll_x+15 >= 406 :
+			if 446>= boll_x and boll_x+15>=406 :
 				obj43_x = 550
 				obj43_y = 100
 				broken = 1
 				obj_count += 1
 				obj43_brok = False
 		if obj44_brok:
-			if 488 >= boll_x and boll_x+15 >= 448 :
+			if 488>= boll_x and boll_x+15>=448 :
 				obj44_x = 550
 				obj44_y = 100
 				broken = 1
@@ -295,77 +295,77 @@ def check_obj_brocken(boll_x, boll_y):
 	
 	if 140>=boll_y>=138:
 		if obj34_brok:
-			if  68 >= boll_x and boll_x+15 >= 28 :
+			if  68>= boll_x and boll_x+15>=28 :
 				obj34_x = 550
 				obj34_y = 100
 				broken = -1
 				obj_count += 1
 				obj34_brok = False
 		if obj35_brok:
-			if 110 >= boll_x and boll_x+15 >= 70 :
+			if 110>= boll_x and boll_x+15>=70 :
 				obj35_x = 550
 				obj35_y = 100
 				broken = -1
 				obj_count += 1
 				obj35_brok = False
 		if obj36_brok:
-			if 152 >= boll_x and boll_x+15 >= 112 :
+			if 152>= boll_x and boll_x+15>=112 :
 				obj36_x = 550
 				obj36_y = 100
 				broken = -1
 				obj_count += 1
 				obj36_brok = False
 		if obj37_brok:
-			if 194 >= boll_x and boll_x+15 >= 154 :
+			if 194>= boll_x and boll_x+15>=154 :
 				obj37_x = 550
 				obj37_y = 100
 				broken = -1
 				obj_count += 1
 				obj37_brok = False
 		if obj38_brok:
-			if 236 >= boll_x and boll_x+15 >= 196 :
+			if 236>= boll_x and boll_x+15>=196 :
 				obj38_x = 550
 				obj38_y = 100
 				broken = -1
 				obj_count += 1
 				obj38_brok = False
 		if obj39_brok:
-			if 278 >= boll_x and boll_x+15 >= 238 :
+			if 278>= boll_x and boll_x+15>=238 :
 				obj39_x = 550
 				obj39_y = 100
 				broken = -1
 				obj_count += 1
 				obj39_brok = False
 		if obj40_brok:
-			if 320 >= boll_x and boll_x+15 >= 280:
+			if 320>= boll_x and boll_x+15>=280:
 				obj40_x = 550
 				obj40_y = 100
 				broken = -1
 				obj_count += 1
 				obj40_brok = False
 		if obj41_brok:
-			if 362 >= boll_x and boll_x+15 >= 322 :
+			if 362>= boll_x and boll_x+15>=322 :
 				obj41_x = 550
 				obj41_y = 100
 				broken = -1
 				obj_count += 1
 				obj41_brok = False
 		if obj42_brok:
-			if 404 >= boll_x and boll_x+15 >= 364 :
+			if 404>= boll_x and boll_x+15>=364 :
 				obj42_x = 550
 				obj42_y = 100
 				broken = -1
 				obj_count += 1
 				obj42_brok = False
 		if obj43_brok:
-			if 446 >= boll_x and boll_x+15 >= 406 :
+			if 446>= boll_x and boll_x+15>=406 :
 				obj43_x = 550
 				obj43_y = 100
 				broken = -1
 				obj_count += 1
 				obj43_brok = False
 		if obj44_brok:
-			if 488 >= boll_x and boll_x+15 >= 448 :
+			if 488>= boll_x and boll_x+15>=448 :
 				obj44_x = 550
 				obj44_y = 100
 				broken = -1
@@ -375,77 +375,77 @@ def check_obj_brocken(boll_x, boll_y):
 #Третий ряд
 	if 137>=boll_y>=135:
 		if obj23_brok:
-			if  68 >= boll_x and boll_x+15 >= 28 :
+			if  68>= boll_x and boll_x+15>=28 :
 				obj23_x = 550
 				obj23_y = 100
 				broken = 1
 				obj_count += 1
 				obj23_brok = False
 		if obj24_brok:
-			if 110 >= boll_x and boll_x+15 >= 70 :
+			if 110>= boll_x and boll_x+15>=70 :
 				obj24_x = 550
 				obj24_y = 100
 				broken = 1
 				obj_count += 1
 				obj24_brok = False
 		if obj25_brok:
-			if 152 >= boll_x and boll_x+15 >= 112 :
+			if 152>= boll_x and boll_x+15>=112 :
 				obj25_x = 550
 				obj25_y = 100
 				broken = 1
 				obj_count += 1
 				obj25_brok = False
 		if obj26_brok:
-			if 194 >= boll_x and boll_x+15 >= 154 :
+			if 194>= boll_x and boll_x+15>=154 :
 				obj26_x = 550
 				obj26_y = 100
 				broken = 1
 				obj_count += 1
 				obj26_brok = False
 		if obj27_brok:
-			if 236 >= boll_x and boll_x+15 >= 196 :
+			if 236>= boll_x and boll_x+15>=196 :
 				obj27_x = 550
 				obj27_y = 100
 				broken = 1
 				obj_count += 1
 				obj27_brok = False
 		if obj28_brok:
-			if 278 >= boll_x and boll_x+15 >= 238 :
+			if 278>= boll_x and boll_x+15>=238 :
 				obj28_x = 550
 				obj28_y = 100
 				broken = 1
 				obj_count += 1
 				obj28_brok = False
-		if obj28_brok:
-			if 320 >= boll_x and boll_x+15 >= 280:
-				obj28_x = 550
-				obj28_y = 100
+		if obj29_brok:
+			if 320>= boll_x and boll_x+15>=280:
+				obj29_x = 550
+				obj29_y = 100
 				broken = 1
 				obj_count += 1
-				obj28_brok = False
+				obj29_brok = False
 		if obj30_brok:
-			if 362 >= boll_x and boll_x+15 >= 322 :
+			if 362>= boll_x and boll_x+15>=322 :
 				obj30_x = 550
 				obj30_y = 100
 				broken = 1
 				obj_count += 1
 				obj30_brok = False
 		if obj31_brok:
-			if 404 >= boll_x and boll_x+15 >= 364 :
+			if 404>= boll_x and boll_x+15>=364 :
 				obj31_x = 550
 				obj31_y = 100
 				broken = 1
 				obj_count += 1
 				obj31_brok = False
 		if obj32_brok:
-			if 446 >= boll_x and boll_x+15 >= 406 :
+			if 446>= boll_x and boll_x+15>=406 :
 				obj32_x = 550
 				obj32_y = 100
 				broken = 1
 				obj_count += 1
 				obj32_brok = False
 		if obj33_brok:
-			if 488 >= boll_x and boll_x+15 >= 448 :
+			if 488>= boll_x and boll_x+15>=448 :
 				obj33_x = 550
 				obj33_y = 100
 				broken = 1
@@ -455,77 +455,77 @@ def check_obj_brocken(boll_x, boll_y):
 
 	if 122>=boll_y>=120:
 		if obj23_brok:
-			if  68 >= boll_x and boll_x+15 >= 28 :
+			if  68>= boll_x and boll_x+15>=28 :
 				obj23_x = 550
 				obj23_y = 100
 				broken = -1
 				obj_count += 1
 				obj23_brok = False
 		if obj24_brok:
-			if 110 >= boll_x and boll_x+15 >= 70 :
+			if 110>= boll_x and boll_x+15>=70 :
 				obj24_x = 550
 				obj24_y = 100
 				broken = -1
 				obj_count += 1
 				obj24_brok = False
 		if obj25_brok:
-			if 152 >= boll_x and boll_x+15 >= 112 :
+			if 152>= boll_x and boll_x+15>=112 :
 				obj25_x = 550
 				obj25_y = 100
 				broken = -1
 				obj_count += 1
 				obj25_brok = False
 		if obj26_brok:
-			if 194 >= boll_x and boll_x+15 >= 154 :
+			if 194>= boll_x and boll_x+15>=154 :
 				obj26_x = 550
 				obj26_y = 100
 				broken = -1
 				obj_count += 1
 				obj26_brok = False
 		if obj27_brok:
-			if 236 >= boll_x and boll_x+15 >= 196 :
+			if 236>= boll_x and boll_x+15>=196 :
 				obj27_x = 550
 				obj27_y = 100
 				broken = -1
 				obj_count += 1
 				obj27_brok = False
 		if obj28_brok:
-			if 278 >= boll_x and boll_x+15 >= 238 :
+			if 278>= boll_x and boll_x+15>=238 :
 				obj28_x = 550
 				obj28_y = 100
 				broken = -1
 				obj_count += 1
 				obj28_brok = False
 		if obj28_brok:
-			if 320 >= boll_x and boll_x+15 >= 280:
+			if 320>= boll_x and boll_x+15>=280:
 				obj28_x = 550
 				obj28_y = 100
 				broken = -1
 				obj_count += 1
 				obj28_brok = False
 		if obj30_brok:
-			if 362 >= boll_x and boll_x+15 >= 322 :
+			if 362>= boll_x and boll_x+15>=322 :
 				obj30_x = 550
 				obj30_y = 100
 				broken = -1
 				obj_count += 1
 				obj30_brok = False
 		if obj31_brok:
-			if 404 >= boll_x and boll_x+15 >= 364 :
+			if 404>= boll_x and boll_x+15>=364 :
 				obj31_x = 550
 				obj31_y = 100
 				broken = -1
 				obj_count += 1
 				obj31_brok = False
 		if obj32_brok:
-			if 446 >= boll_x and boll_x+15 >= 406 :
+			if 446>= boll_x and boll_x+15>=406 :
 				obj32_x = 550
 				obj32_y = 100
 				broken = -1
 				obj_count += 1
 				obj32_brok = False
 		if obj33_brok:
-			if 488 >= boll_x and boll_x+15 >= 448 :
+			if 488>= boll_x and boll_x+15>=448 :
 				obj33_x = 550
 				obj33_y = 100
 				broken = -1
@@ -535,77 +535,77 @@ def check_obj_brocken(boll_x, boll_y):
 #Второй ряд
 	if 119>=boll_y>=117:
 		if obj12_brok:
-			if  68 >= boll_x and boll_x+15 >= 28 :
+			if  68>= boll_x and boll_x+15>=28 :
 				obj12_x = 550
 				obj12_y = 100
 				broken = 1
 				obj_count += 1
 				obj12_brok = False
 		if obj13_brok:
-			if 110 >= boll_x and boll_x+15 >= 70 :
+			if 110>= boll_x and boll_x+15>=70 :
 				obj13_x = 550
 				obj13_y = 100
 				broken = 1
 				obj_count += 1
 				obj13_brok = False
 		if obj14_brok:
-			if 152 >= boll_x and boll_x+15 >= 112 :
+			if 152>= boll_x and boll_x+15>=112 :
 				obj14_x = 550
 				obj14_y = 100
 				broken = 1
 				obj_count += 1
 				obj14_brok = False
 		if obj15_brok:
-			if 194 >= boll_x and boll_x+15 >= 154 :
+			if 194>= boll_x and boll_x+15>=154 :
 				obj15_x = 550
 				obj15_y = 100
 				broken = 1
 				obj_count += 1
 				obj15_brok = False
 		if obj16_brok:
-			if 236 >= boll_x and boll_x+15 >= 196 :
+			if 236>= boll_x and boll_x+15>=196 :
 				obj16_x = 550
 				obj16_y = 100
 				broken = 1
 				obj_count += 1
 				obj16_brok = False
 		if obj17_brok:
-			if 278 >= boll_x and boll_x+15 >= 238 :
+			if 278>= boll_x and boll_x+15>=238 :
 				obj17_x = 550
 				obj17_y = 100
 				broken = 1
 				obj_count += 1
 				obj17_brok = False
 		if obj18_brok:
-			if 320 >= boll_x and boll_x+15 >= 280:
+			if 320>= boll_x and boll_x+15>=280:
 				obj18_x = 550
 				obj18_y = 100
 				broken = 1
 				obj_count += 1
 				obj18_brok = False
 		if obj19_brok:
-			if 362 >= boll_x and boll_x+15 >= 322 :
+			if 362>= boll_x and boll_x+15>=322 :
 				obj19_x = 550
 				obj19_y = 100
 				broken = 1
 				obj_count += 1
 				obj19_brok = False
 		if obj20_brok:
-			if 404 >= boll_x and boll_x+15 >= 364 :
+			if 404>= boll_x and boll_x+15>=364 :
 				obj20_x = 550
 				obj20_y = 100
 				broken = 1
 				obj_count += 1
 				obj20_brok = False
 		if obj21_brok:
-			if 446 >= boll_x and boll_x+15 >= 406 :
+			if 446>= boll_x and boll_x+15>=406 :
 				obj21_x = 550
 				obj21_y = 100
 				broken = 1
 				obj_count += 1
 				obj21_brok = False
 		if obj22_brok:
-			if 488 >= boll_x and boll_x+15 >= 448 :
+			if 488>= boll_x and boll_x+15>=448 :
 				obj22_x = 550
 				obj22_y = 100
 				broken = 1
@@ -615,77 +615,77 @@ def check_obj_brocken(boll_x, boll_y):
 
 	if 104>=boll_y>=102:
 		if obj12_brok:
-			if  68 >= boll_x and boll_x+15 >= 28 :
+			if  68>= boll_x and boll_x+15>=28 :
 				obj12_x = 550
 				obj12_y = 100
 				broken = -1
 				obj_count += 1
 				obj12_brok = False
 		if obj13_brok:
-			if 110 >= boll_x and boll_x+15 >= 70 :
+			if 110>= boll_x and boll_x+15>=70 :
 				obj13_x = 550
 				obj13_y = 100
 				broken = -1
 				obj_count += 1
 				obj13_brok = False
 		if obj14_brok:
-			if 152 >= boll_x and boll_x+15 >= 112 :
+			if 152>= boll_x and boll_x+15>=112 :
 				obj14_x = 550
 				obj14_y = 100
 				broken = -1
 				obj_count += 1
 				obj14_brok = False
 		if obj15_brok:
-			if 194 >= boll_x and boll_x+15 >= 154 :
+			if 194>= boll_x and boll_x+15>=154 :
 				obj15_x = 550
 				obj15_y = 100
 				broken = -1
 				obj_count += 1
 				obj15_brok = False
 		if obj16_brok:
-			if 236 >= boll_x and boll_x+15 >= 196 :
+			if 236>= boll_x and boll_x+15>=196 :
 				obj16_x = 550
 				obj16_y = 100
 				broken = -1
 				obj_count += 1
 				obj16_brok = False
 		if obj17_brok:
-			if 278 >= boll_x and boll_x+15 >= 238 :
+			if 278>= boll_x and boll_x+15>=238 :
 				obj17_x = 550
 				obj17_y = 100
 				broken = -1
 				obj_count += 1
 				obj17_brok = False
 		if obj18_brok:
-			if 381 >= boll_x and boll_x+15 >= 241:
+			if 281 >= boll_x+7 >= 241:
 				obj18_x = 550
 				obj18_y = 100
 				broken = -1
 				obj_count += 1
 				obj18_brok = False
 		if obj19_brok:
-			if 362 >= boll_x and boll_x+15 >= 322 :
+			if 362>= boll_x and boll_x+15>=322 :
 				obj19_x = 550
 				obj19_y = 100
 				broken = -1
 				obj_count += 1
 				obj19_brok = False
 		if obj20_brok:
-			if 404 >= boll_x and boll_x+15 >= 364 :
+			if 404>= boll_x and boll_x+15>=364 :
 				obj20_x = 550
 				obj20_y = 100
 				broken = -1
 				obj_count += 1
 				obj20_brok = False
 		if obj21_brok:
-			if 446 >= boll_x and boll_x+15 >= 406 :
+			if 446>= boll_x and boll_x+15>=406 :
 				obj21_x = 550
 				obj21_y = 100
 				broken = -1
 				obj_count += 1
 				obj21_brok = False
 		if obj22_brok:
-			if 488 >= boll_x and boll_x+15 >= 448 :
+			if 488>= boll_x and boll_x+15>=448 :
 				obj22_x = 550
 				obj22_y = 100
 				broken = -1
@@ -695,77 +695,77 @@ def check_obj_brocken(boll_x, boll_y):
 #Первый ряд
 	if 101>=boll_y>=99:
 		if obj1_brok:
-			if  68 >= boll_x and boll_x+15 >= 28 :
+			if  68>= boll_x and boll_x+15>=28 :
 				obj1_x = 550
 				obj1_y = 100
 				broken = 1
 				obj_count += 1
 				obj1_brok = False
 		if obj2_brok:
-			if 110 >= boll_x and boll_x+15 >= 70 :
+			if 110>= boll_x and boll_x+15>=70 :
 				obj2_x = 550
 				obj2_y = 100
 				broken = 1
 				obj_count += 1
 				obj2_brok = False
 		if obj3_brok:
-			if 152 >= boll_x and boll_x+15 >= 112 :
+			if 152>= boll_x and boll_x+15>=112 :
 				obj3_x = 550
 				obj3_y = 100
 				broken = 1
 				obj_count += 1
 				obj3_brok = False
 		if obj4_brok:
-			if 194 >= boll_x and boll_x+15 >= 154 :
+			if 194>= boll_x and boll_x+15>=154 :
 				obj4_x = 550
 				obj4_y = 100
 				broken = 1
 				obj_count += 1
 				obj4_brok = False
 		if obj5_brok:
-			if 236 >= boll_x and boll_x+15 >= 196 :
+			if 236>= boll_x and boll_x+15>=196 :
 				obj5_x = 550
 				obj5_y = 100
 				broken = 1
 				obj_count += 1
 				obj5_brok = False
 		if obj6_brok:
-			if 278 >= boll_x and boll_x+15 >= 238 :
+			if 278>= boll_x and boll_x+15>=238 :
 				obj6_x = 550
 				obj6_y = 100
 				broken = 1
 				obj_count += 1
 				obj6_brok = False
 		if obj7_brok:
-			if 320 >= boll_x and boll_x+15 >= 280:
+			if 320>= boll_x and boll_x+15>=280:
 				obj7_x = 550
 				obj7_y = 100
 				broken = 1
 				obj_count += 1
 				obj7_brok = False
 		if obj8_brok:
-			if 362 >= boll_x and boll_x+15 >= 322 :
+			if 362>= boll_x and boll_x+15>=322 :
 				obj8_x = 550
 				obj8_y = 100
 				broken = 1
 				obj_count += 1
 				obj8_brok = False
 		if obj9_brok:
-			if 404 >= boll_x and boll_x+15 >= 364 :
+			if 404>= boll_x and boll_x+15>=364 :
 				obj9_x = 550
 				obj9_y = 100
 				broken = 1
 				obj_count += 1
 				obj9_brok = False
 		if obj10_brok:
-			if 446 >= boll_x and boll_x+15 >= 406 :
+			if 446>= boll_x and boll_x+15>=406 :
 				obj10_x = 550
 				obj10_y = 100
 				broken = 1
 				obj_count += 1
 				obj10_brok = False
 		if obj11_brok:
-			if 488 >= boll_x and boll_x+15 >= 448 :
+			if 488>= boll_x and boll_x+15>=448 :
 				obj11_x = 550
 				obj11_y = 100
 				broken = 1
@@ -774,110 +774,111 @@ def check_obj_brocken(boll_x, boll_y):
 
 
 
+
 # Отскок мяча по координате Х
 
 #Четвертый ряд
-	if boll_y<=156 and boll_y+15>=139:
+	if 156>=boll_y and 139<=boll_y+15:
 		if obj34_brok:
-			if boll_x == 69:
+			if 69 >= boll_x >= 67:
 				broken_x = 1
 				obj_count += 1
 				obj34_x = 550
 				obj34_y = 100
 				obj34_brok = False
 		if obj35_brok:
-			if boll_x == 111:
+			if 111 >= boll_x >= 109:
 				obj35_x = 550
 				obj35_y = 100
 				broken_x = 1
 				obj_count += 1
 				obj35_brok = False
-			if boll_x + 15 == 71:
+			if 73 >= boll_x +15 >= 71:
 				obj35_x = 550
 				obj35_y = 100
 				broken_x = -1
 				obj_count += 1
 				obj35_brok = False
 		if obj36_brok:
-			if boll_x == 153:
+			if 153 >= boll_x >= 151:
 				obj36_x = 550
 				obj36_y = 100
 				broken_x = 1
 				obj_count += 1
 				obj36_brok = False
-			if boll_x + 15 == 113:
+			if 115 >= boll_x +15 >= 113:
 				obj36_x = 550
 				obj36_y = 100
 				broken_x = -1
 				obj_count += 1
 				obj36_brok = False
 		if obj37_brok:
-			if boll_x == 195:
+			if 195 >= boll_x >= 193:
 				obj37_x = 550
 				obj37_y = 100
 				broken_x = 1
 				obj_count += 1
 				obj37_brok = False
-			if boll_x + 15 == 155:
+			if 157 >= boll_x +15 >= 155:
 				obj37_x = 550
 				obj37_y = 100
 				broken_x = -1
 				obj_count += 1
 				obj37_brok = False
 		if obj38_brok:
-			if boll_x == 237:
+			if 237>= boll_x >= 235:
 				obj38_x = 550
 				obj38_y = 100
 				broken_x = 1
 				obj_count += 1
 				obj38_brok = False
-			if boll_x + 15 == 197:
+			if 199 >= boll_x +15 >= 197:
 				obj38_x = 550
 				obj38_y = 100
 				broken_x = -1
 				obj_count += 1
 				obj38_brok = False
 		if obj39_brok:
-			if boll_x == 279:
+			if 279 >= boll_x >= 277:
 				obj39_x = 550
 				obj39_y = 100
 				broken_x = 1
 				obj_count += 1
 				obj39_brok = False
-			if boll_x + 15 == 239:
+			if 241 >= boll_x +15 >= 239:
 				obj39_x = 550
 				obj39_y = 100
 				broken_x = -1
 				obj_count += 1
 				obj39_brok = False
 		if obj40_brok:
-			if boll_x == 321:
+			if 321 >= boll_x >= 319:
 				obj40_x = 550
 				obj40_y = 100
 				broken_x = 1
 				obj_count += 1
 				obj40_brok = False
-			if boll_x + 15 == 281:
+			if 283 >= boll_x +15 >= 281:
 				obj40_x = 550
 				obj40_y = 100
 				broken_x = -1
 				obj_count += 1
 				obj40_brok = False
 		if obj41_brok:
-			if boll_x == 363:
+			if 363 >= boll_x >= 361:
 				obj41_x = 550
 				obj41_y = 100
 				broken_x = 1
 				obj_count += 1
 				obj41_brok = False
-			if boll_x + 15 == 323:
+			if 325 >= boll_x +15 >= 323:
 				obj41_x = 550
 				obj41_y = 100
 				broken_x = -1
 				obj_count += 1
 				obj41_brok = False
 		if obj42_brok:
-			if boll_x == 405:
+			if 405 >= boll_x >= 403:
 				obj42_x = 550
 				obj42_y = 100
 				broken_x = 1
@@ -890,26 +891,26 @@ def check_obj_brocken(boll_x, boll_y):
 				obj_count += 1
 				obj42_brok = False
 		if obj43_brok:
-			if boll_x == 447:
+			if 447 >= boll_x >= 445:
 				obj43_x = 550
 				obj43_y = 100
 				broken_x = 1
 				obj_count += 1
 				obj43_brok = False
-			if boll_x + 15 == 407:
+			if 409 >= boll_x +15 >= 407:
 				obj43_x = 550
 				obj43_y = 100
 				broken_x = -1
 				obj_count += 1
 				obj43_brok = False
 		if obj44_brok:
-			if boll_x == 489:
+			if 489 >= boll_x >= 487:
 				obj44_x = 550
 				obj44_y = 100
 				broken_x = 1
 				obj_count += 1
 				obj44_brok = False
-			if boll_x + 15 == 449:
+			if 451>= boll_x +15 >= 449:
 				obj44_x = 550
 				obj44_y = 100
 				broken_x = -1
@@ -917,107 +918,107 @@ def check_obj_brocken(boll_x, boll_y):
 				obj44_brok = False
 
 #Третий ряд
-	if boll_y<=138 and boll_y+15>=121:
+	if 138>=boll_y and 121<=boll_y+15:
 			if obj23_brok:
-				if boll_x == 69:
+				if 69 >= boll_x >= 67:
 					broken_x = 1
 					obj_count += 1
 					obj23_x = 550
 					obj23_y = 100
 					obj23_brok = False
 			if obj24_brok:
-				if boll_x == 111:
+				if 111 >= boll_x >= 109:
 					obj24_x = 550
 					obj24_y = 100
 					broken_x = 1
 					obj_count += 1
 					obj24_brok = False
-				if boll_x + 15 == 71:
+				if 73 >= boll_x +15 >= 71:
 					obj24_x = 550
 					obj24_y = 100
 					broken_x = -1
 					obj_count += 1
 					obj24_brok = False
 			if obj25_brok:
-				if boll_x == 153:
+				if 153 >= boll_x >= 151:
 					obj25_x = 550
 					obj25_y = 100
 					broken_x = 1
 					obj_count += 1
 					obj25_brok = False
-				if boll_x + 15 == 113:
+				if 115 >= boll_x +15 >= 113:
 					obj25_x = 550
 					obj25_y = 100
 					broken_x = -1
 					obj_count += 1
 					obj25_brok = False
 			if obj26_brok:
-				if boll_x == 195:
+				if 195 >= boll_x >= 193:
 					obj26_x = 550
 					obj26_y = 100
 					broken_x = 1
 					obj_count += 1
 					obj26_brok = False
-				if boll_x + 15 == 155:
+				if 157 >= boll_x +15 >= 155:
 					obj26_x = 550
 					obj26_y = 100
 					broken_x = -1
 					obj_count += 1
 					obj26_brok = False
 			if obj27_brok:
-				if boll_x == 237:
+				if 237>= boll_x >= 235:
 					obj27_x = 550
 					obj27_y = 100
 					broken_x = 1
 					obj_count += 1
 					obj27_brok = False
-				if boll_x + 15 == 197:
+				if 199 >= boll_x +15 >= 197:
 					obj27_x = 550
 					obj27_y = 100
 					broken_x = -1
 					obj_count += 1
 					obj27_brok = False
 			if obj28_brok:
-				if boll_x == 279:
+				if 279 >= boll_x >= 277:
 					obj28_x = 550
 					obj28_y = 100
 					broken_x = 1
 					obj_count += 1
 					obj28_brok = False
-				if boll_x + 15 == 239:
+				if 241 >= boll_x +15 >= 239:
 					obj28_x = 550
 					obj28_y = 100
 					broken_x = -1
 					obj_count += 1
 					obj28_brok = False
 			if obj29_brok:
-				if boll_x == 321:
+				if 321 >= boll_x >= 319:
 					obj29_x = 550
 					obj29_y = 100
 					broken_x = 1
 					obj_count += 1
 					obj29_brok = False
-				if boll_x + 15 == 281:
+				if 283 >= boll_x +15 >= 281:
 					obj29_x = 550
 					obj29_y = 100
 					broken_x = -1
 					obj_count += 1
 					obj29_brok = False
 			if obj30_brok:
-				if boll_x == 363:
+				if 363 >= boll_x >= 361:
 					obj30_x = 550
 					obj30_y = 100
 					broken_x = 1
 					obj_count += 1
 					obj30_brok = False
-				if boll_x + 15 == 323:
+				if 325 >= boll_x +15 >= 323:
 					obj30_x = 550
 					obj30_y = 100
 					broken_x = -1
 					obj_count += 1
 					obj30_brok = False
 			if obj31_brok:
-				if boll_x == 405:
+				if 405 >= boll_x >= 403:
 					obj31_x = 550
 					obj31_y = 100
 					broken_x = 1
@@ -1030,26 +1031,26 @@ def check_obj_brocken(boll_x, boll_y):
 					obj_count += 1
 					obj31_brok = False
 			if obj32_brok:
-				if boll_x == 447:
+				if 447 >= boll_x >= 445:
 					obj32_x = 550
 					obj32_y = 100
 					broken_x = 1
 					obj_count += 1
 					obj32_brok = False
-				if boll_x + 15 == 407:
+				if 409 >= boll_x +15 >= 407:
 					obj32_x = 550
 					obj32_y = 100
 					broken_x = -1
 					obj_count += 1
 					obj32_brok = False
 			if obj33_brok:
-				if boll_x == 489:
+				if 489 >= boll_x >= 487:
 					obj33_x = 550
 					obj33_y = 100
 					broken_x = 1
 					obj_count += 1
 					obj33_brok = False
-				if boll_x + 15 == 449:
+				if 451>= boll_x +15 >= 449:
 					obj33_x = 550
 					obj33_y = 100
 					broken_x = -1
@@ -1057,107 +1058,107 @@ def check_obj_brocken(boll_x, boll_y):
 					obj33_brok = False
 
 #Второй ряд
-	if boll_y<=120 and boll_y+15>=103:
+	if 120>=boll_y and 103<=boll_y+15:
 			if obj12_brok:
-				if boll_x == 69:
+				if 69 >= boll_x >= 67:
 					broken_x = 1
 					obj_count += 1
 					obj12_x = 550
 					obj12_y = 100
 					obj12_brok = False
 			if obj13_brok:
-				if boll_x == 111:
+				if 111 >= boll_x >= 109:
 					obj13_x = 550
 					obj13_y = 100
 					broken_x = 1
 					obj_count += 1
 					obj13_brok = False
-				if boll_x + 15 == 71:
+				if 73 >= boll_x +15 >= 71:
 					obj13_x = 550
 					obj13_y = 100
 					broken_x = -1
 					obj_count += 1
 					obj13_brok = False
 			if obj14_brok:
-				if boll_x == 153:
+				if 153 >= boll_x >= 151:
 					obj14_x = 550
 					obj14_y = 100
 					broken_x = 1
 					obj_count += 1
 					obj14_brok = False
-				if boll_x + 15 == 113:
+				if 115 >= boll_x +15 >= 113:
 					obj14_x = 550
 					obj14_y = 100
 					broken_x = -1
 					obj_count += 1
 					obj14_brok = False
 			if obj15_brok:
-				if boll_x == 195:
+				if 195 >= boll_x >= 193:
 					obj15_x = 550
 					obj15_y = 100
 					broken_x = 1
 					obj_count += 1
 					obj15_brok = False
-				if boll_x + 15 == 155:
+				if 157 >= boll_x +15 >= 155:
 					obj15_x = 550
 					obj15_y = 100
 					broken_x = -1
 					obj_count += 1
 					obj15_brok = False
 			if obj16_brok:
-				if boll_x == 237:
+				if 237>= boll_x >= 235:
 					obj16_x = 550
 					obj16_y = 100
 					broken_x = 1
 					obj_count += 1
 					obj16_brok = False
-				if boll_x + 15 == 197:
+				if 199 >= boll_x +15 >= 197:
 					obj16_x = 550
 					obj16_y = 100
 					broken_x = -1
 					obj_count += 1
 					obj16_brok = False
 			if obj17_brok:
-				if boll_x == 279:
+				if 279 >= boll_x >= 277:
 					obj17_x = 550
 					obj17_y = 100
 					broken_x = 1
 					obj_count += 1
 					obj17_brok = False
-				if boll_x + 15 == 239:
+				if 241 >= boll_x +15 >= 239:
 					obj17_x = 550
 					obj17_y = 100
 					broken_x = -1
 					obj_count += 1
 					obj17_brok = False
 			if obj18_brok:
-				if boll_x == 321:
+				if 321 >= boll_x >= 319:
 					obj18_x = 550
 					obj18_y = 100
 					broken_x = 1
 					obj_count += 1
 					obj18_brok = False
-				if boll_x + 15 == 281:
+				if 283 >= boll_x +15 >= 281:
 					obj18_x = 550
 					obj18_y = 100
 					broken_x = -1
 					obj_count += 1
 					obj18_brok = False
 			if obj19_brok:
-				if boll_x == 363:
+				if 363 >= boll_x >= 361:
 					obj19_x = 550
 					obj19_y = 100
 					broken_x = 1
 					obj_count += 1
 					obj19_brok = False
-				if boll_x + 15 == 323:
+				if 325 >= boll_x +15 >= 323:
 					obj19_x = 550
 					obj19_y = 100
 					broken_x = -1
 					obj_count += 1
 					obj19_brok = False
 			if obj20_brok:
-				if boll_x == 405:
+				if 405 >= boll_x >= 403:
 					obj20_x = 550
 					obj20_y = 100
 					broken_x = 1
@@ -1170,26 +1171,26 @@ def check_obj_brocken(boll_x, boll_y):
 					obj_count += 1
 					obj20_brok = False
 			if obj21_brok:
-				if boll_x == 447:
+				if 447 >= boll_x >= 445:
 					obj21_x = 550
 					obj21_y = 100
 					broken_x = 1
 					obj_count += 1
 					obj21_brok = False
-				if boll_x + 15 == 407:
+				if 409 >= boll_x +15 >= 407:
 					obj21_x = 550
 					obj21_y = 100
 					broken_x = -1
 					obj_count += 1
 					obj21_brok = False
 			if obj22_brok:
-				if boll_x == 489:
+				if 489 >= boll_x >= 487:
 					obj22_x = 550
 					obj22_y = 100
 					broken_x = 1
 					obj_count += 1
 					obj22_brok = False
-				if boll_x + 15 == 449:
+				if 451>= boll_x +15 >= 449:
 					obj22_x = 550
 					obj22_y = 100
 					broken_x = -1
@@ -1197,107 +1198,107 @@ def check_obj_brocken(boll_x, boll_y):
 					obj22_brok = False
 
 #Первый ряд
-	if boll_y<=102 and boll_y+15>=85:
+	if 102>=boll_y and 85<=boll_y+15:
 			if obj1_brok:
-				if boll_x == 69:
+				if 69 >= boll_x >= 67:
 					broken_x = 1
 					obj_count += 1
 					obj1_x = 550
 					obj1_y = 100
 					obj1_brok = False
 			if obj2_brok:
-				if boll_x == 111:
+				if 111 >= boll_x >= 109:
 					obj2_x = 550
 					obj2_y = 100
 					broken_x = 1
 					obj_count += 1
 					obj2_brok = False
-				if boll_x + 15 == 71:
+				if 73 >= boll_x +15 >= 71:
 					obj2_x = 550
 					obj2_y = 100
 					broken_x = -1
 					obj_count += 1
 					obj2_brok = False
 			if obj3_brok:
-				if boll_x == 153:
+				if 153 >= boll_x >= 151:
 					obj3_x = 550
 					obj3_y = 100
 					broken_x = 1
 					obj_count += 1
 					obj3_brok = False
-				if boll_x + 15 == 113:
+				if 115 >= boll_x +15 >= 113:
 					obj3_x = 550
 					obj3_y = 100
 					broken_x = -1
 					obj_count += 1
 					obj3_brok = False
 			if obj4_brok:
-				if boll_x == 195:
+				if 195 >= boll_x >= 193:
 					obj4_x = 550
 					obj4_y = 100
 					broken_x = 1
 					obj_count += 1
 					obj4_brok = False
-				if boll_x + 15 == 155:
+				if 157 >= boll_x +15 >= 155:
 					obj4_x = 550
 					obj4_y = 100
 					broken_x = -1
 					obj_count += 1
 					obj4_brok = False
 			if obj5_brok:
-				if boll_x == 237:
+				if 237>= boll_x >= 235:
 					obj5_x = 550
 					obj5_y = 100
 					broken_x = 1
 					obj_count += 1
 					obj5_brok = False
-				if boll_x + 15 == 197:
+				if 199 >= boll_x +15 >= 197:
 					obj5_x = 550
 					obj5_y = 100
 					broken_x = -1
 					obj_count += 1
 					obj5_brok = False
 			if obj6_brok:
-				if boll_x == 279:
+				if 279 >= boll_x >= 277:
 					obj6_x = 550
 					obj6_y = 100
 					broken_x = 1
 					obj_count += 1
 					obj6_brok = False
-				if boll_x + 15 == 239:
+				if 241 >= boll_x +15 >= 239:
 					obj6_x = 550
 					obj6_y = 100
 					broken_x = -1
 					obj_count += 1
 					obj6_brok = False
 			if obj7_brok:
-				if boll_x == 321:
+				if 321 >= boll_x >= 319:
 					obj7_x = 550
 					obj7_y = 100
 					broken_x = 1
 					obj_count += 1
 					obj7_brok = False
-				if boll_x + 15 == 281:
+				if 283 >= boll_x +15 >= 281:
 					obj7_x = 550
 					obj7_y = 100
 					broken_x = -1
 					obj_count += 1
 					obj7_brok = False
 			if obj8_brok:
-				if boll_x == 363:
+				if 363 >= boll_x >= 361:
 					obj8_x = 550
 					obj8_y = 100
 					broken_x = 1
 					obj_count += 1
 					obj8_brok = False
-				if boll_x + 15 == 323:
+				if 325 >= boll_x +15 >= 323:
 					obj8_x = 550
 					obj8_y = 100
 					broken_x = -1
 					obj_count += 1
 					obj8_brok = False
 			if obj9_brok:
-				if boll_x == 405:
+				if 405 >= boll_x >= 403:
 					obj9_x = 550
 					obj9_y = 100
 					broken_x = 1
@@ -1310,29 +1311,28 @@ def check_obj_brocken(boll_x, boll_y):
 					obj_count += 1
 					obj9_brok = False
 			if obj10_brok:
-				if boll_x == 447:
+				if 447 >= boll_x >= 445:
 					obj10_x = 550
 					obj10_y = 100
 					broken_x = 1
 					obj_count += 1
 					obj10_brok = False
-				if boll_x + 15 == 407:
+				if 409 >= boll_x +15 >= 407:
 					obj10_x = 550
 					obj10_y = 100
 					broken_x = -1
 					obj_count += 1
 					obj10_brok = False
 			if obj11_brok:
-				if boll_x == 489:
+				if 489 >= boll_x >= 487:
 					obj11_x = 550
 					obj11_y = 100
 					broken_x = 1
 					obj_count += 1
 					obj11_brok = False
-				if boll_x + 15 == 449:
+				if 451>= boll_x +15 >= 449:
 					obj11_x = 550
 					obj11_y = 100
 					broken_x = -1
 					obj_count += 1
 					obj11_brok = False
-
