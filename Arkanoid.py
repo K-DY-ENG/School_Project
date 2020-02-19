@@ -14,6 +14,7 @@ YELLOW = (247, 255, 60)
 GREEN = (45, 255, 60)
 RED = (222, 17, 0)
 PURPLE = (217, 0, 167)
+WHITE = (255, 255, 255)
 
 display = pygame.display.set_mode((display_width, display_height))
 
@@ -52,9 +53,10 @@ Fon = pygame.image.load('images\\Fon.png').convert_alpha()
 Background = pygame.image.load('images\\background.png').convert_alpha()
 Boll_skin = pygame.transform.scale(Change_skin.boll_color(),(boll_width, boll_height))
 
-bo = 0
+game_start = True
 
 def game_run():
+    global Platform_skin
     game = False
 
     while True:
@@ -65,16 +67,12 @@ def game_run():
 
         # Платформа в цикле, т.к ее размер меняется.
         Platform_skin = pygame.transform.scale(Change_skin.platform_color(), (platform_width, platform_height))
-        
-        display.fill((0, 0, 0))
-        display.blit(pygame.transform.scale(Background, (505, 600)), (10, 80, 505, 600))
-        display.blit(Fon, (0, 0, display_width, display_height))
-        display.blit(Boll_skin, (boll_x, boll_y, boll_width, boll_height))
-        display.blit(Platform_skin, (platform_x, platform_y, platform_width, platform_height))
+        blit_screen()
 
-        Level_1.objects_skin()
-
-
+        if game_start:
+            game_run_ENTER()
+            blit_screen()
+            game_time()
         
         if game:
             global press_f, press_f, plat_len_time, plat_time_start, FPS_time, \
@@ -107,6 +105,9 @@ def game_run():
             if key[pygame.K_r]:
                 FPS_time += 1
 
+            key = pygame.key.get_pressed()
+            if key[pygame.K_ESCAPE]:
+                pause_game()
 
             platform_lenght_time()
 
@@ -119,12 +120,23 @@ def game_run():
                 plat_len_time = 0
 
         key = pygame.key.get_pressed()
-        if key[pygame.K_s]:
+        if key[pygame.K_RETURN]:
             game = True
 
 
         pygame.display.update()
         FPS.tick(FPS_time)
+
+
+def blit_screen():
+            display.fill((0, 0, 0))
+            display.blit(pygame.transform.scale(Background, (505, 600)), (10, 80, 505, 600))
+            display.blit(Fon, (0, 0, display_width, display_height))
+            display.blit(Boll_skin, (boll_x, boll_y, boll_width, boll_height))
+            display.blit(Platform_skin, (platform_x, platform_y, platform_width, platform_height))
+            Level_1.objects_skin()
+            print_text('Developed for a school project by D.K (vk.com/d.e_mon)', 0, 0)
+            print_text('Beta version 1.0', 570, 635)
 
 
 def right():
@@ -228,5 +240,72 @@ def broken_x():
     if Level_1.broken_x == -1:
         boll_control_x = -1
         Level_1.broken_x = 0
+
+font_doc = pygame.font.Font('DevFont.ttf', 10) 
+
+def print_text(messege, x, y):
+    text = font_doc.render(messege, True, WHITE)
+    display.blit(text, (x, y))
+
+def print_pause(messege, x, y, font_color = (255, 255, 255), font_type = 'GameFont.ttf', font_size = 30):
+    font_type = pygame.font.Font(font_type, font_size)
+    text = font_type.render(messege, True, font_color)
+    display.blit(text, (x, y))
+
+def pause():
+    paused = True
+    while paused:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                quit()
+
+        print_pause('PAUSED... PRESS SPACE TO CONTINUE', 80, 400)
+
+        key = pygame.key.get_pressed()
+        if key[pygame.K_SPACE]:
+            paused = False
+
+        pygame.display.update()
+        pygame.time.Clock().tick(15)
+
+def game_run_ENTER():
+    paused = True
+    while paused:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                quit()
+
+        print_pause('PRESS ENTER TO START GAME', 120, 400)
+
+        key = pygame.key.get_pressed()
+        if key[pygame.K_RETURN]:
+            paused = False
+        pygame.display.update()
+        pygame.time.Clock().tick(15)
+
+
+def game_time():
+    global game_start
+    for i in range(600):
+        pygame.display.update()
+        print_pause('3', 260, 400)
+    blit_screen()
+    for i in range(600):
+        pygame.display.update()
+        print_pause('2', 260, 400)
+    blit_screen()
+    for i in range(600):
+        pygame.display.update()
+        print_pause('1', 260, 400)
+    blit_screen()
+    game_start = False
+
+
+def pause_game():
+    pause()
+    blit_screen()
+    game_time()
 
 game_run()
