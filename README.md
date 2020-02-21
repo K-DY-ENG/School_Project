@@ -23,7 +23,7 @@ Version 1.2
 + Added all sounds
 + Added a score counter
 + Added a life counter
-+ Added end of game
++ Added game over
 
 Версия 1.2
 
