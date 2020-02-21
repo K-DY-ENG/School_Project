@@ -17,3 +17,17 @@ Version 1.1
 Версия 1.1
 
 + Скорректирован отскок относительно координаты X
+
+Version 1.2
+
++ Added all sounds
++ Added a score counter
++ Added a life counter
++ Added end of game
+
+Версия 1.2
+
++ Добавлены все звуки
++ Добавлен счетчик очков
++ Добавлен счетчик жизней
++ Добавлен конец игры 
