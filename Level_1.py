@@ -858,7 +858,7 @@ def check_obj_brocken(boll_x, boll_y):
 				obj_brok[41] = False
 			if boll_x + 15 == 365:
 				point.play()
-				obj42_x = obj_main_x
+				coords_x[41] = obj_main_x
 				coords_y[41] = obj_main_y
 				broken_x = -1
 				obj_count += 1

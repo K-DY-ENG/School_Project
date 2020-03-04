@@ -16,68 +16,79 @@ RED = (222, 17, 0)
 PURPLE = (217, 0, 167)
 WHITE = (255, 255, 255)
 
+icon = pygame.image.load("images\\icon.png")
+icon = pygame.transform.scale(icon, (16, 16)).convert_alpha()
+pygame.display.set_icon(icon)
+pygame.display.set_caption("School game")
+
+
 display = pygame.display.set_mode((display_width, display_height))
 
-# РЈСЃС‚Р°РЅРѕРІР»РµРЅРёРµ РїР»Р°С‚С„РѕСЂРјС‹ РЅР° РїРѕР»Рµ
+# Установка платформы на поле
 platform_width = 90
 platform_height = 15
 platform_x = (display_width-105)//2 - 45
 platform_y = display_height - 60
 
-# РЈСЃР»РѕРІРёСЏ Р±РѕРЅСѓСЃР° "РЈРґР»РёРЅРЅРµРЅРёРµ РїР»Р°С‚С„РѕСЂРјС‹"
+# Условия бонуса "Удлиннение платформы"
 lenght_pl = 20
 plat_width = 90
 plat_len_time = 0
 plat_time_start = False
 
-# РЈСЃС‚Р°РЅРѕРІР»РµРЅРёРµ РјСЏС‡Р° РЅР° РїРѕР»Рµ
+# Установление мяча на поле
 boll_x = (display_width-150)//2 + 10
 boll_y = display_height - 350
 boll_width = 15
 boll_height = 15
 
+boll_speed = [(1, 2), (2, 3), (1, 2, 3)]
 
-# РўСЂР°РµРєС‚РѕСЂРёРё РґРІРёР¶РµРЅРёСЏ РјСЏС‡Р°
-boll_step_x = (1, 2, 3)
-boll_step_y = (1, 2, 3)
 
-# "РљРѕРЅС‚СЂРѕР»С‘СЂС‹" РїРѕРІРµРґРµРЅРёСЏ РјСЏС‡Р°
+# Траектории движения мяча
+boll_step_x = boll_speed[2]
+boll_step_y = boll_speed[2]
+
+# "Контролёры" поведения мяча
 boll_control_x = 0
 boll_control_y = 1
 
-# РџРµСЂРІРѕРЅР°С‡Р°Р»СЊРЅРѕРµ РґРІРёР¶РµРЅРёРµ РјСЏС‡Р°
+# Первоначальное движение мяча
 boll_moves_x = random.choice(boll_step_x)
 boll_moves_y = 2
 
-press_f = False
+# Переменна для увеличения платформы
+press_f = True
 
 
-# РљРѕР»РёС‡РµСЃС‚РІРѕ Р¶РёР·РЅРµР№ РёРіСЂРѕРєР°
+# Количество жизней игрока
 USER_HELTH = 3
 
 
 FPS = pygame.time.Clock()
+FPS_time = 100
 
-# Р—Р°РіСЂСѓР·РєР° С„РѕРЅРѕРІРѕРіРѕ РёР·РѕР±СЂР°Р¶РµРЅРёСЏ
+# Загрузка фонового изображения
 Fon = pygame.image.load('images\\Fon.png').convert_alpha()
 Background = pygame.image.load('images\\background.png').convert_alpha()
 
-# Р—Р°РіСЂСѓР·РєР° РєР°СЂС‚РёРЅРѕРє Р¶РёР·РЅРµР№ РёРіСЂРѕРєР°
+# Загрузка картинок жизней игрока
 helth = pygame.image.load('images\\Helth\\Helth.png').convert_alpha()
 helth = pygame.transform.scale(helth,(30, 30))
 helth_out = pygame.image.load('images\\Helth\\Helth_out.png').convert_alpha()
 helth_out = pygame.transform.scale(helth_out,(30, 30))
 
-# РўСЂР°РЅСЃС„РѕСЂРјР°С†РёСЏ РјСЏС‡Р° Рє РЅРµРѕР±С…РѕРґРёРјРѕРјСѓ СЂР·РјРµСЂСѓ
-Boll_skin = pygame.transform.scale(Change_skin.boll_color(),(boll_width, boll_height))
+# Трансформация мяча к необходимому рзмеру
+Boll_skin = Change_skin.Bolls[0]
+Platform_skin = Change_skin.Platforms[0]
 
-# Р—Р°РіСЂСѓР·РєР° С€СЂРёС„С‚РѕРІ РґР»СЏ С‚РµРєСЃС‚Р°
+# Загрузка шрифтов для текста
 font_doc = pygame.font.Font('Fonts\\DevFont.ttf', 10)
 score_font = pygame.font.Font('Fonts\\GameFont.ttf', 22)
 pause_font = pygame.font.Font('Fonts\\GameFont.ttf', 30)
 game_over_font = pygame.font.Font('Fonts\\GameFont.ttf', 25)
 
-# Р—Р°РіСЂСѓР·РєР° Р·РІСѓРєРѕРІ РёРіСЂС‹
+# Загрузка звуков игры
 pause_ON = pygame.mixer.Sound("Sounds\\Pause_ON.wav")
 pause_OFF = pygame.mixer.Sound("Sounds\\Pause_OFF.wav")
 hit = pygame.mixer.Sound("Sounds\\hit.wav")
@@ -97,36 +108,34 @@ def game_run():
                 pygame.quit()
                 quit()
 
-        # РўСЂР°РЅСЃС„РѕСЂРјР°С†РёСЏ РїР»Р°С‚С„РѕСЂРјС‹ РІ С†РёРєР»Рµ, С‚.Рє РµРµ СЂР°Р·РјРµСЂ РјРµРЅСЏРµС‚СЃСЏ
-        Platform_skin = pygame.transform.scale(Change_skin.platform_color(), (platform_width, platform_height))
-        Level_1.play_score() # РўР°Р±Р»Рѕ СЃС‡РµС‚Р° РѕС‡РєРѕРІ
-        blit_screen() # Р·Р°РіСЂСѓР·РєР° РІСЃРµС… РѕСЃС‚Р°Р»СЊРЅС‹С… РёР·РѕР±СЂР°Р¶РµРЅРёР№
+        Level_1.play_score() # Табло счета очков
+        blit_screen() # загрузка всех остальных изображений
 
-        # Р”Р»СЏ РЅР°С‡Р°Р»Р° РёРіСЂС‹ РїРѕ РЅР°Р¶Р°С‚РёСЋ РєРЅРѕРїРєРё ENTER
+        # Для начала игры по нажатию кнопки ENTER
         if game_start:
             game_run_ENTER()
             blit_screen()
             game_time()
-        # РћСЃРЅРѕРІРЅРѕР№ РёРіСЂРѕРІРѕР№ С†РёРєР»
+        # Основной игровой цикл
         if game:
             global press_f, press_f, plat_len_time, plat_time_start, FPS_time, \
             boll_moves_y, boll_moves_x,boll_control_y
 
-            # РџСЂРѕРІРµСЂРєР° РјРµСЃС‚РѕРїРѕР»РѕР¶РµРЅРёСЏ РјСЏС‡Р°
+            # Проверка местоположения мяча
             check_boll_y()
             check_boll_x()
 
-            # Р”РІРёР¶РµРЅРёРµ РјСЏС‡Р°
+            # Движение мяча
             boll_move_x()
             boll_move_y()
 
-            # РџСЂРѕРІРµСЂРєР° РїРѕРїР°РґР°РЅРёСЏ РїРѕ РїР»Р°С‚С„РѕСЂРјР°Рј
+            # Проверка попадания по платформам
             Level_1.check_obj_brocken(boll_x, boll_y)
             broken_y()
             broken_x()
             check_lvl_win()
 
-            # Р”РІРёР¶РµРЅРёРµ РїР»Р°С‚С„РѕСЂРјС‹
+            # Движение платформы
             key = pygame.key.get_pressed()
             if key[pygame.K_RIGHT]:
                 right()
@@ -135,46 +144,42 @@ def game_run():
             if key[pygame.K_LEFT]:
                 left()
 
-            # Р‘РѕРЅСѓСЃ "РЈРґР»РёРЅРµРЅРёРµ РїР»Р°С‚С„РѕСЂРјС‹"
-            key = pygame.key.get_pressed()
-            if key[pygame.K_f]:
-                if press_f:
-                    for i in range (20):
-                        platform_lenght_plus()
-                    plat_time_start = True
-                    press_f = False
+            # Бонус "Удлинение платформы" , временно отключен
+           # key = pygame.key.get_pressed()
+            #if key[pygame.K_f]:
+             #   if press_f:
+              #      for i in range (20):
+               #         platform_lenght_plus()
+                #    plat_time_start = True
+                 #   press_f = False
 
-            # РЈРІРµР»РёС‡РµРЅРёРµ СЃРєРѕСЂРѕСЃС‚Рё РёРіСЂС‹ РґР»СЏ С‚РµСЃС‚РѕРІ
-            key = pygame.key.get_pressed()
-            if key[pygame.K_r]:
-                FPS_time += 1
-
-            # РџР°СѓР·Р°
+            
+            # Пауза
             key = pygame.key.get_pressed()
             if key[pygame.K_ESCAPE]:
                 pause_game()
 
-            # Р’СЂРµРјСЏ РґРµР№СЃС‚РІРёСЏ Р±РѕРЅСѓСЃР° "РЈРґР»РёРЅРµРЅРёРµ РїР»Р°С‚С„РѕСЂРјС‹"
+            # Счетчик "Удлинение платформы"
             platform_lenght_time()
 
-            # РћС‚РєР»СЋС‡РµРЅРёРµ Р±РѕРЅСѓСЃР°
-            if plat_len_time >= 1000:
+            # Отключение бонуса
+            if plat_len_time >= 1000000:
                 for i in range (20):
                     platform_lenght_minus()
 
                 press_f = True
                 plat_time_start = False
                 plat_len_time = 0
-        # ENTER РґР»СЏ РЅР°С‡Р°Р»Р° РёРіСЂС‹
+        # ENTER для начала игры
         key = pygame.key.get_pressed()
         if key[pygame.K_RETURN]:
             game = True
 
 
         pygame.display.update()
-        FPS.tick(100)
+        FPS.tick(FPS_time)
 
-# РЈСЃС‚Р°РЅРѕРІРєР° РІСЃРµС… РёР·РѕР±СЂР°Р¶РµРЅРёР№ РЅР° СЌРєСЂР°РЅРµ
+# Установка всех изображений на экране
 def blit_screen():
             display.fill((0, 0, 0))
             display.blit(pygame.transform.scale(Background, (505, 600)), (10, 80, 505, 600))
@@ -183,24 +188,24 @@ def blit_screen():
             display.blit(Platform_skin, (platform_x, platform_y, platform_width, platform_height))
             Level_1.objects_skin()
             print_text('Developed for a school project by D.K (vk.com/d.e_mon)', 0, 0, 0)
-            print_text('Beta version 1.2', 570, 635, 0)
+            print_text('Beta version 1.5', 570, 635, 0)
             print_text('SCORE', 525, 410, 1)
             print_text(Level_1.text_score, 575, 410, 1)
             print_helth()
 
-# Р”РІРёР¶РµРЅРёРµ РїР»Р°С‚С„РѕСЂРјС‹ РІРїСЂР°РІРѕ
+# Движение платформы вправо
 def right():
     global platform_x
     if platform_x+plat_width < display_width-150:
         platform_x += 2
 
-# Р”РІРёР¶РµРЅРёРµ РїР»Р°С‚С„РѕСЂРјС‹ РІР»РµРІРѕ
+# Движение платформы влево
 def left():
     global platform_x
     if platform_x > 20:
         platform_x -= 2
 
-# РўСЂР°РµРєС‚РѕСЂРёСЏ РґРІРёР¶РµРЅРёСЏ РјСЏС‡Р°
+# Траектория движения мяча
 def boll_move_x():
     global boll_x, boll_control_x
     
@@ -213,7 +218,7 @@ def boll_move_x():
     if boll_control_x == 0:
         boll_x += boll_moves_x
 
-# Р”РІРёР¶РµРЅРёРµ РјСЏС‡Р° РїРѕ РѕСЃРё Y
+# Движение мяча по оси Y
 def boll_move_y():
     global  boll_y, boll_control_y
     if boll_control_y == -1:
@@ -221,7 +226,7 @@ def boll_move_y():
     if boll_control_y == 1:
         boll_y += boll_moves_y
 
-# Р”РІРёР¶РµРЅРёРµ РјСЏС‡Р° РїРѕ РѕСЃРё X
+# Движение мяча по оси X
 def check_boll_x():
     global boll_control_x, boll_control_y, boll, boll_moves_x
 
@@ -244,7 +249,7 @@ def check_boll_x():
     if boll_x == platform_x + plat_width and boll_y + 15 > platform_y:
         hit.play()
         boll_control_x = 1
-# РџСЂРѕРІРµСЂРєР° РєРѕРѕСЂРґРёРЅР°С‚ РјСЏС‡Р° РїРѕ РѕСЃРё Y
+# Проверка координат мяча по оси Y
 def check_boll_y():
     global boll_control_y, boll_moves_y
 
@@ -263,7 +268,7 @@ def check_boll_y():
         boll_moves_y = random.choice(boll_step_y)
         boll_control_y = 1
 
-# РЈРґР»РёРЅРµРЅРёРµ РїР»Р°С‚С„РѕСЂРјС‹ 
+# Удлинение платформы 
 def platform_lenght_plus():
     global plat_width, lenght_pl, platform_width, platform_x, Platform_skin
     platform_width += 2
@@ -271,7 +276,7 @@ def platform_lenght_plus():
     lenght_pl += 2
     platform_x -= 1
 
-# РЈРјРµРЅСЊС€РµРЅРёРµ РїР»Р°С‚С„РѕСЂРјС‹
+# Уменьшение платформы
 def platform_lenght_minus():
     global plat_width, lenght_pl, platform_width, platform_x
     platform_width -= 2
@@ -280,13 +285,13 @@ def platform_lenght_minus():
     platform_x += 1
 
 
-# Р’СЂРµРјСЏ РґРµР№СЃС‚РІРёСЏ Р±РѕРЅСѓСЃР°
+# Время действия бонуса
 def platform_lenght_time():
     global plat_len_time
     if plat_time_start:
         plat_len_time += 1
 
-# РћС‚СЃРєРѕРє РѕС‚ СЃР»РѕРјР°РЅРЅС‹С… РїР»Р°С‚С„РѕСЂРјС‹ РїРѕ РѕСЃРё Y
+# Отскок от сломанных платформы по оси Y
 def broken_y():
     global boll_control_y
     if Level_1.broken == 1:
@@ -296,7 +301,7 @@ def broken_y():
         boll_control_y = -1
         Level_1.broken = 0
 
-# РћС‚СЃРєРѕРє РѕС‚ СЃР»РѕРјР°РµРЅРЅС‹С… РїР»Р°С‚С„РѕСЂРј РїРѕ РѕСЃРё X
+# Отскок от сломаенных платформ по оси X
 def broken_x():
     global boll_control_x
     if Level_1.broken_x == 1:
@@ -306,7 +311,7 @@ def broken_x():
         boll_control_x = -1
         Level_1.broken_x = 0
 
-# РќР°РїРёСЃР°РЅРёРµ РІСЃРµС… С‚РµРєСЃС‚РѕРІ РЅР° СЌРєСЂР°РЅРµ
+# Написание всех текстов на экране
 def print_text(messege, x, y, play):
     if play == 0:
         text = font_doc.render(messege, True, WHITE)
@@ -320,7 +325,7 @@ def print_text(messege, x, y, play):
     display.blit(text, (x, y))
 
 
-# РџР°СѓР·Р°
+# Пауза
 def pause():
     paused = True
     while paused:
@@ -330,15 +335,20 @@ def pause():
                 quit()
 
         print_text('PAUSED... PRESS SPACE TO CONTINUE', 80, 400, 2)
+        print_text('or ESCAPE to exit', 170, 440, 2)
 
         key = pygame.key.get_pressed()
         if key[pygame.K_SPACE]:
             paused = False
 
+        if key[pygame.K_ESCAPE]:
+            pygame.quit()
+            quit()
+
         pygame.display.update()
         pygame.time.Clock().tick(15)
 
-# РќР°С‡Р°Р»Рѕ РёРіСЂС‹ РїРѕ РЅР°Р¶Р°С‚РёСЋ РЅР° ENTER
+# Начало игры по нажатию на ENTER
 def game_run_ENTER(play = 'now'):
     paused = True
     while paused:
@@ -359,7 +369,7 @@ def game_run_ENTER(play = 'now'):
         pygame.display.update()
         pygame.time.Clock().tick(15)
 
-# РћР±СЂР°С‚РЅС‹Р№ РѕС‚СЃС‡РµС‚ РґРѕ РЅР°С‡Р°Р»Р° РёРіСЂС‹ 
+# Обратный отсчет до начала игры 
 def game_time():
     global game_start
     for i in range(700):
@@ -376,8 +386,9 @@ def game_time():
     blit_screen()
     game_start = False
 
-# РџРµС‡Р°С‚СЊ С‚РµРєСЃС‚Р° РїСЂРё РїР°СѓР·Рµ 
+# Печать текста при паузе 
 def pause_game(play = 'now'):
+    pygame.time.wait(200)
     pause_ON.play()
     if play == 'now':
         pause()
@@ -390,7 +401,7 @@ def pause_game(play = 'now'):
     pause_OFF.play()
 
 
-# РћС‚СЂРёСЃРѕРІРєР° РёР·РѕР±СЂР°Р¶РµРЅРёР№ РєРѕР»РёС‡РµСЃС‚РІР° Р¶РёР·РЅРµР№ РЅР° СЌРєСЂР°РЅРµ 
+# Отрисовка изображений количества жизней на экране 
 def print_helth():
     if USER_HELTH == 3:
         display.blit(helth,(530, 350, 30, 30))
@@ -412,7 +423,7 @@ def print_helth():
         display.blit(helth_out,(570, 350, 30, 30))
         display.blit(helth_out,(610, 350, 30, 30))
 
-# Р¤СѓРЅРєС†РёСЏ РїСЂРѕРёРіСЂС‹С€Р° РёРіСЂРѕРєР° 
+# Функция проигрыша игрока 
 def game_loose():
     global USER_HELTH, boll_y, boll_x, platform_x, platform_y
     if USER_HELTH != 1:
@@ -428,7 +439,7 @@ def game_loose():
         USER_HELTH -= 1
         game_over()
 
-# РљРѕРЅРµС† РёРіСЂС‹
+# Конец игры
 def game_over():
     game = True
     over.play()
@@ -451,7 +462,7 @@ def game_over():
         FPS.tick(5)
 
 def check_lvl_win():
-    if Level_1.obj_count >= 2:
+    if Level_1.obj_count >= 44:
         pygame.display.update()
         blit_screen()
         win.play()
@@ -463,7 +474,7 @@ def check_lvl_win():
 
 
 
-# Р¤СѓРЅРєС†РёСЏ РїРµСЂРµР·Р°РїСѓСЃРєР° РёРіСЂС‹
+# Функция перезапуска игры
 def restart():
     global boll_y, boll_x, platform_x, platform_y, USER_HELTH, game_start, \
     boll_control_x, boll_control_y
@@ -479,6 +490,13 @@ def restart():
     Level_1.restart()
     game_run()
 
-
-
-game_run()
+#Запуск игры из меню
+def start():
+    global boll_step_x, boll_step_y, Boll_skin, Platform_skin
+    f = open('Settings.bin', 'rb')
+    skins = f.readline().split()
+    boll_step_x = boll_speed[(int(skins[0]))]
+    boll_step_y = boll_speed[(int(skins[0]))]
+    Boll_skin = Change_skin.Bolls[(int(skins[1]))]
+    Platform_skin = Change_skin.Platforms[(int(skins[2]))]
+    game_run()
