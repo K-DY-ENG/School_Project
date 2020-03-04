@@ -62,6 +62,7 @@ choose_speed_control = 2
 choose_boll_color_control = 1
 choose_plat_color_control = 1
 
+#Пишет кнопки меню в соответствии с шрифтом
 def font():
     global play, about, settings, exit
     play = menu_font.render('PLAY', True, play_color)
@@ -69,13 +70,13 @@ def font():
     settings = menu_font.render('SETTINGS', True, settings_color)
     exit = menu_font.render('EXIT', True, exit_color)
 
-
+#Функция выхода по нажатия на крестик
 def ex():
     for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
                 quit()
-
+#Цикл меню
 def menu():
     while ON:
         ex()
@@ -88,6 +89,7 @@ def menu():
 pygame.mixer.music.load("Sounds\\Intro_Music.ogg")
 pygame.mixer.music.play(-1, 0.0)
 
+#Рисует все на экране
 def blit_screen():
     display.fill((0, 0, 0))
     display.blit(play, (285, 150))
@@ -96,7 +98,7 @@ def blit_screen():
     display.blit(exit, (290, 450))
     pygame.display.update()
 
-
+#Кнопка PLAY
 def botton_play():
     global ON, about_color, exit_color, play_color
     pygame.time.wait(200)
@@ -124,6 +126,7 @@ def botton_play():
             botton_exit()
             FPS.tick(FPS_time)
 
+#Кнопка ABOUT
 def botton_about():
     global play_color, settings_color, about_color
     pygame.time.wait(200)
@@ -143,7 +146,7 @@ def botton_about():
             botton_play()
             FPS.tick(FPS_time)
 
-
+#Кнопка SETTINGS
 def botton_settings():
     global about_color, settings_color, exit_color
     pygame.time.wait(200)
@@ -164,7 +167,7 @@ def botton_settings():
             botton_about()
             FPS.tick(FPS_time)
 
-
+#Кнопка EXIT
 def botton_exit():
     global play_color, settings_color, exit_color
     pygame.time.wait(200)
@@ -186,7 +189,7 @@ def botton_exit():
             FPS.tick(FPS_time)
 
 
-
+#При нажатии на кнопку ABOUT
 def about_screen():
     display.fill((0, 0, 0))
     display.blit(back_botton, (290, 500))
@@ -202,7 +205,7 @@ def about_screen():
 
 
 
-
+#При нажатии на кнопку SETTINGS
 def settings_screen():
     pygame.time.wait(200)
     while ON:
@@ -217,7 +220,7 @@ def settings_screen():
         if key[pygame.K_DOWN]:
             settings_boll_skin()
 
-
+#Рисует кнопки во вкладке SETTINGS
 def settings_blit():
         display.fill((0, 0, 0))
         display.blit((menu_font_small.render('Boll color:', True, font_boll_color)), (30, 100))
@@ -227,7 +230,7 @@ def settings_blit():
         pygame.display.update()
 
 
-
+#Кновка SPEED в SETTINGS
 def settings_speed():
     global font_plat_color, font_back_color, font_boll_speed
     pygame.time.wait(200)
@@ -247,7 +250,7 @@ def settings_speed():
             settings_screen()
 
 
-
+#Кнопка BOLL SKIN в SETTINGS
 def settings_boll_skin():
     global font_plat_color, font_back_color, font_boll_color
     pygame.time.wait(200)
@@ -266,7 +269,7 @@ def settings_boll_skin():
         if key[pygame.K_RETURN] or key[pygame.K_RIGHT]:
             choose_boll_skin()
 
-
+#Кнопка PLATFORM SKIN в SETTINGS
 def settings_plat_skin():
     global font_plat_color, font_boll_color, font_boll_speed
     pygame.time.wait(200)
@@ -285,7 +288,7 @@ def settings_plat_skin():
 
 
 
-
+#Выбор скорости игры
 def choose_speed():
     global font_boll_speed, low_speed, normal_speed, random_speed, choose_ON, choose_speed_control
     pygame.time.wait(200)
@@ -355,13 +358,14 @@ def choose_speed():
                 blit_choose_speed()
                 pygame.display.update()
 
-
+#Анимация выбора скорости
 def blit_choose_speed():
     display.blit((menu_font_small.render('Low', True, low_speed)), (230, 400))
     display.blit((menu_font_small.render('Normal', True, normal_speed)), (310, 400))
     display.blit((menu_font_small.render('Random', True, random_speed)), (430, 400))
 
 
+#Выбор скина платформы
 def choose_plat_skin():
     global font_plat_color, choose_ON, plat_set, choose_plat_color_control
     pygame.time.wait(200)
@@ -419,7 +423,7 @@ def choose_plat_skin():
                 blit_choose_plat_skin()
 
 
-
+#Анимация выбора платформы
 def blit_choose_plat_skin():
     display.blit(Change_skin.Platform_first_skin, (250, 255, 90, 15))
     display.blit(Change_skin.Platform_second_skin, (370, 255, 90, 15))
@@ -431,7 +435,7 @@ def blit_choose_plat_skin():
     pygame.display.update()
 
 
-
+#Выбор цвета мяча
 def choose_boll_skin():
     global font_boll_color, choose_ON, boll_set, choose_boll_color_control
     pygame.time.wait(200)
@@ -537,7 +541,7 @@ def choose_boll_skin():
                 blit_choose_boll_skin()
 
 
-
+#Анимация выбора цвета мяча
 def blit_choose_boll_skin():
     pygame.draw.rect(display, ACTIVE, (boll_set, 111, 5, 6))
     pygame.draw.rect(display, WHITE, (181, 110, 7, 8), 1)
