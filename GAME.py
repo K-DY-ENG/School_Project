@@ -39,7 +39,7 @@ random_speed = ACTIVE
 
 
 text = doc_font.render('Developed for a school project by D.K (vk.com/d.e_mon)', True, (255, 255, 255))
-text2 =  doc_font.render('Version 1.3', True, (255, 255, 255))
+text2 =  doc_font.render('Version 1.5', True, (255, 255, 255))
 
 
 
